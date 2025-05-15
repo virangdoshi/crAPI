@@ -29,6 +29,7 @@ import com.crapi.repository.*;
 import com.crapi.service.VehicleService;
 import com.crapi.utils.GenerateVIN;
 import com.crapi.utils.UserData;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -110,7 +111,7 @@ public class InitialDataConfig {
 
   @EventListener
   public void setup(ApplicationReadyEvent event) {
-    random = new Random();
+    random = new SecureRandom();
     random.setSeed(seed);
     generateVIN = new GenerateVIN();
     addVehicleModel();
